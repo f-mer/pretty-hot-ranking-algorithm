@@ -15,5 +15,5 @@ function rank (upvotes, downvotes, date, start) {
   var score = upvotes - downvotes
   var order = Math.log(Math.max(score, 1)) / LOG_10
   var sign = score > 0 ? 1 : score === 0 ? 0 : -1
-  return Math.round(sign * order + seconds / HALF_LIFE, 7)
+  return (sign * order + seconds / HALF_LIFE).toFixed(7)
 }
