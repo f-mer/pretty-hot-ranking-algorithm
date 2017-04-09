@@ -1,6 +1,7 @@
 var assert = require('assert')
 
 var HALF_LIFE = 45000 // 12.5 hours
+var LOG_10 = Math.log(10)
 
 module.exports = rank
 
@@ -12,7 +13,7 @@ function rank (upvotes, downvotes, date, start) {
 
   var seconds = (date.getTime() - start.getTime()) / 1000
   var score = upvotes - downvotes
-  var order = Math.log(Math.max(score, 1), 10)
+  var order = Math.log(Math.max(score, 1)) / LOG_10
   var sign = score > 0 ? 1 : score === 0 ? 0 : -1
   return Math.round(sign * order + seconds / HALF_LIFE, 7)
 }
