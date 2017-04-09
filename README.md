@@ -12,7 +12,7 @@ site that always has fresh, relevant content for people to discover.
 ```js
 var rank = require('pretty-hot-ranking-algorithm')
 
-var start = new Date(20, 2, 2006)
+var start = new Date(2006, 2, 20)
 var upvotes = 15
 var downvotes = 4
 var date = new Date()
